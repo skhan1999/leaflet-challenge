@@ -22,13 +22,13 @@ var waterColor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercol
     ext: 'jpg'
 });
 
-// Topography
+// topography
 let topoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
     maxZoom: 17,
     attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
 });
 
-//// Create a basemaps.
+// basemaps.
 let basemaps = {
     Grayscale: grayscale,
     "Water Color": waterColor,
@@ -36,13 +36,13 @@ let basemaps = {
     Default: defaultMap
 };
 
-// make a map object
+// map object
 var myMap = L.map("map",{
     center: [36.7783, -119.4179],
     zoom: 5,
     layers: [grayscale, waterColor, topoMap, defaultMap]
 });
 
-// add the default map to the map
+// add default map to the map
 defaultMap.addTo(myMap);
 
